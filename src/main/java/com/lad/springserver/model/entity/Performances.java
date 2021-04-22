@@ -16,15 +16,19 @@ public class Performances extends CommonEntity {
     private double price;
     private double rating;
   //  private Collection<ActorPerformance> actorPerformancesById;
+    @OneToMany(mappedBy = "performancesByIdPerformance")
     private Collection<Booking> bookingsById;
+
+    @ManyToOne
+    @JoinColumn(name = "genre_id", referencedColumnName = "id", nullable = false)
     private Geners genersByGenre;
    // private Collection<ScenaristPerformance> scenaristPerformancesById;
 
-    @ManyToMany(mappedBy = "performances",fetch = FetchType.EAGER)
-    private Set<Actors> actorsSet;
+    @ManyToMany(mappedBy = "performances"/*,fetch = FetchType.EAGER*/)
+    public Collection<Actors> actorsSet;
 
-    @ManyToMany(mappedBy = "performances", fetch = FetchType.EAGER)
-    private Set<Scenarists> scenaristsSet;
+    @ManyToMany(mappedBy = "performances"/*, fetch = FetchType.EAGER*/)
+    public Collection<Scenarists> scenaristsSet;
 
 //    @Id
 //    @Column(name = "id")
@@ -120,7 +124,7 @@ public class Performances extends CommonEntity {
         this.actorPerformancesById = actorPerformancesById;
     }*/
 
-    @OneToMany(mappedBy = "performancesByIdPerformance")
+
     public Collection<Booking> getBookingsById() {
         return bookingsById;
     }
@@ -129,8 +133,8 @@ public class Performances extends CommonEntity {
         this.bookingsById = bookingsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "genre_id", referencedColumnName = "id", nullable = false)
+
+
     public Geners getGenersByGenre() {
         return genersByGenre;
     }

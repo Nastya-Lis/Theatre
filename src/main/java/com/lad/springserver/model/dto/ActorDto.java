@@ -10,5 +10,5 @@ import java.util.Set;
 public class ActorDto extends AbstractDto {
     private String name;
     private String biography;
-    private Set<PerformanceDto> performances;
+    private Set<Integer> performances;
 }

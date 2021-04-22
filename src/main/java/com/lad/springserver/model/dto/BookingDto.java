@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class BookingDto extends AbstractDto{
     private int amount;
-    private Users user;
-    private Performances performance;
+    private Integer user;
+    private Integer performance;
 }

@@ -7,7 +7,12 @@ import java.util.Objects;
 public class Booking extends CommonEntity {
     //private int id;
     private int amount;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user", referencedColumnName = "id", nullable = false)
     private Users usersByIdUser;
+    @ManyToOne
+    @JoinColumn(name = "id_performance", referencedColumnName = "id", nullable = false)
     private Performances performancesByIdPerformance;
 
    /* @Id
@@ -43,8 +48,7 @@ public class Booking extends CommonEntity {
         return Objects.hash(/*id, */amount);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "id_user", referencedColumnName = "id", nullable = false)
+
     public Users getUsersByIdUser() {
         return usersByIdUser;
     }
@@ -53,8 +57,7 @@ public class Booking extends CommonEntity {
         this.usersByIdUser = usersByIdUser;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "id_performance", referencedColumnName = "id", nullable = false)
+
     public Performances getPerformancesByIdPerformance() {
         return performancesByIdPerformance;
     }

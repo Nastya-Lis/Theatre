@@ -13,6 +13,4 @@ import java.util.List;
 public interface GenresRepository extends IRepository<Geners>{
     @Override
     List<Geners> findAll();
-
-
 }

@@ -23,6 +23,6 @@ public class PerformanceDto extends AbstractDto{
     private double rating;
     private Collection<BookingDto> bookings;
     private GenreDto genre;
-    private Set<ActorDto> actors;
-    private Set<ScenaristDto> scenarists;
+    public Collection<ActorDto> actors;
+    public Collection<ScenaristDto> scenarists;
 }

@@ -10,8 +10,9 @@ import java.util.Objects;
 public class Geners extends CommonEntity {
     //private int id;
     private String nameType;
-    private Collection<Performances> performancesById;
 
+    @OneToMany(targetEntity = Performances.class ,mappedBy = "genersByGenre", fetch=FetchType.EAGER)
+    private Collection<Performances> performancesById;
 //    @Id
 //    @Column(name = "id")
 //    public int getId() {
@@ -45,7 +46,8 @@ public class Geners extends CommonEntity {
         return Objects.hash(/*id,*/ nameType);
     }
 
-    @OneToMany(targetEntity = Performances.class ,mappedBy = "genersByGenre", fetch=FetchType.EAGER)
+
+
     public Collection<Performances> getPerformancesById() {
         return performancesById;
     }

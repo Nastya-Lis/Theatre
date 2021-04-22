@@ -7,6 +7,7 @@ import com.lad.springserver.model.entity.Geners;
 import com.lad.springserver.model.repository.GenresRepository;
 import com.lad.springserver.model.service.GenersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +18,9 @@ import java.util.List;
 public class GenreController extends CommonController<Geners,GenresRepository, GenreDto, GenersService, GenreMapping>{
 
    // @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-   @Autowired
+
    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @Autowired
     public GenreController(GenreMapping mapper, GenersService service) {
         super(mapper, service);
     }
@@ -28,10 +30,11 @@ public class GenreController extends CommonController<Geners,GenresRepository, G
     public GenreController(GenresRepository repository){
         this.genresRepository = repository;
     }*/
-/*
-    @GetMapping("/all")
-    public List<Geners> getAllGenres(){
-      return genresRepository.findAll();
-    }*/
+
+
+//    @GetMapping("/all")
+//    public List<Geners> getAllGenres(){
+//      return genresRepository.findAll();
+//    }
 
 }

@@ -10,6 +10,7 @@ public class Users extends CommonEntity {
     private String login;
     private String password;
     private String email;
+    @OneToMany(mappedBy = "usersByIdUser")
     private Collection<Booking> bookingsById;
 
 //    @Id
@@ -65,7 +66,7 @@ public class Users extends CommonEntity {
         return Objects.hash(/*id,*/ login, password, email);
     }
 
-    @OneToMany(mappedBy = "usersByIdUser")
+
     public Collection<Booking> getBookingsById() {
         return bookingsById;
     }

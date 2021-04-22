@@ -9,8 +9,13 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface UserMapping extends CommonMapping<Users, UserDto>{
+
     @Mapping(target = "bookingsById", source = "bookings")
     Users dtoToEntity(UserDto dto);
+
     @Mapping(target = "bookings", source = "bookingsById")
     UserDto entityToDto(Users user);
+
+
+
 }

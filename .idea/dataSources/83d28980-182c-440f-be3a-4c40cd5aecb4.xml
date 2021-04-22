@@ -309,7 +309,7 @@
 1317579732|||0|execute|G
 1317579732|||2|execute|D
 </Grants>
-      <IntrospectionTimestamp>2021-04-20.11:23:04.930</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2021-04-22.04:17:39.093</IntrospectionTimestamp>
       <Current>1</Current>
       <DescriptionsCheckSum>10059936681</DescriptionsCheckSum>
     </schema>
@@ -416,7 +416,7 @@
     <table id="80" parent="60" name="Performances">
       <ObjectId>1429580131</ObjectId>
       <CreatedTimestamp>2021-03-21.21:17:47.300</CreatedTimestamp>
-      <ModifiedTimestamp>2021-04-14.14:31:13.443</ModifiedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:16.010</ModifiedTimestamp>
     </table>
     <table id="81" parent="60" name="ScenaristPerformance">
       <ObjectId>1141579105</ObjectId>
@@ -426,7 +426,7 @@
     <table id="82" parent="60" name="Scenarists">
       <ObjectId>1029578706</ObjectId>
       <CreatedTimestamp>2021-03-21.20:18:29.867</CreatedTimestamp>
-      <ModifiedTimestamp>2021-04-06.02:35:21.717</ModifiedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:16.013</ModifiedTimestamp>
     </table>
     <table id="83" parent="60" name="actor_performance">
       <ObjectId>1682105033</ObjectId>
@@ -436,9 +436,14 @@
     <table id="84" parent="60" name="booking">
       <ObjectId>370100359</ObjectId>
       <CreatedTimestamp>2021-04-10.15:09:06.297</CreatedTimestamp>
-      <ModifiedTimestamp>2021-04-20.11:22:49.177</ModifiedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:15.887</ModifiedTimestamp>
     </table>
-    <table id="85" parent="60" name="sysdiagrams">
+    <table id="85" parent="60" name="scenarist_performance">
+      <ObjectId>1246627484</ObjectId>
+      <CreatedTimestamp>2021-04-22.03:57:15.890</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:16.013</ModifiedTimestamp>
+    </table>
+    <table id="86" parent="60" name="sysdiagrams">
       <ObjectId>1173579219</ObjectId>
       <ExtendedProperties>microsoft_database_tools_support
 1
@@ -446,12 +451,12 @@ int</ExtendedProperties>
       <CreatedTimestamp>2021-03-21.20:57:12.817</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.20:57:12.817</ModifiedTimestamp>
     </table>
-    <table id="86" parent="60" name="users">
+    <table id="87" parent="60" name="users">
       <ObjectId>450100644</ObjectId>
       <CreatedTimestamp>2021-04-10.15:09:06.300</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-10.16:47:18.920</ModifiedTimestamp>
     </table>
-    <routine id="87" parent="60" name="fn_diagramobjects">
+    <routine id="88" parent="60" name="fn_diagramobjects">
       <ObjectId>1317579732</ObjectId>
       <SourceTextLength>1647</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -461,7 +466,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.833</ModifiedTimestamp>
       <RoutineType>scalar-fun</RoutineType>
     </routine>
-    <routine id="88" parent="60" name="sp_alterdiagram">
+    <routine id="89" parent="60" name="sp_alterdiagram">
       <ObjectId>1285579618</ObjectId>
       <SourceTextLength>1501</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -471,7 +476,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.830</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="89" parent="60" name="sp_creatediagram">
+    <routine id="90" parent="60" name="sp_creatediagram">
       <ObjectId>1253579504</ObjectId>
       <SourceTextLength>1223</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -481,7 +486,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.827</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="90" parent="60" name="sp_dropdiagram">
+    <routine id="91" parent="60" name="sp_dropdiagram">
       <ObjectId>1301579675</ObjectId>
       <SourceTextLength>896</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -491,7 +496,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.830</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="91" parent="60" name="sp_helpdiagramdefinition">
+    <routine id="92" parent="60" name="sp_helpdiagramdefinition">
       <ObjectId>1237579447</ObjectId>
       <SourceTextLength>921</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -501,7 +506,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.823</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="92" parent="60" name="sp_helpdiagrams">
+    <routine id="93" parent="60" name="sp_helpdiagrams">
       <ObjectId>1221579390</ObjectId>
       <SourceTextLength>658</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -511,7 +516,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.820</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="93" parent="60" name="sp_renamediagram">
+    <routine id="94" parent="60" name="sp_renamediagram">
       <ObjectId>1269579561</ObjectId>
       <SourceTextLength>1721</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -521,7 +526,7 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.827</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="94" parent="60" name="sp_upgraddiagrams">
+    <routine id="95" parent="60" name="sp_upgraddiagrams">
       <ObjectId>1157579162</ObjectId>
       <SourceTextLength>1463</SourceTextLength>
       <ExtendedProperties>microsoft_database_tools_support
@@ -531,17 +536,17 @@ int</ExtendedProperties>
       <ModifiedTimestamp>2021-03-21.20:57:12.817</ModifiedTimestamp>
       <RoutineType>proc</RoutineType>
     </routine>
-    <column id="95" parent="77" name="id_actor">
+    <column id="96" parent="77" name="id_actor">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="96" parent="77" name="id_performance">
+    <column id="97" parent="77" name="id_performance">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <foreign-key id="97" parent="77" name="FK_ActorPerformance_Actors">
+    <foreign-key id="98" parent="77" name="FK_ActorPerformance_Actors">
       <ObjectId>1397580017</ObjectId>
       <CreatedTimestamp>2021-03-21.21:16:25.500</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:16:25.500</ModifiedTimestamp>
@@ -551,7 +556,7 @@ int</ExtendedProperties>
       <RefKeyName>PK_Actors</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="98" parent="77" name="FK_ActorPerformance_Performances">
+    <foreign-key id="99" parent="77" name="FK_ActorPerformance_Performances">
       <ObjectId>1477580302</ObjectId>
       <CreatedTimestamp>2021-03-21.21:17:47.620</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:17:47.620</ModifiedTimestamp>
@@ -561,27 +566,27 @@ int</ExtendedProperties>
       <RefKeyName>PK_Performance</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="99" parent="78" name="id">
+    <column id="100" parent="78" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="100" parent="78" name="name">
+    <column id="101" parent="78" name="name">
       <Position>2</Position>
       <DataType>nvarchar(25 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="101" parent="78" name="biography">
+    <column id="102" parent="78" name="biography">
       <Position>3</Position>
       <DataType>nvarchar(max)|0s</DataType>
     </column>
-    <index id="102" parent="78" name="PK_Actors">
+    <index id="103" parent="78" name="PK_Actors">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="103" parent="78" name="PK_Actors">
+    <key id="104" parent="78" name="PK_Actors">
       <ObjectId>1013578649</ObjectId>
       <CreatedTimestamp>2021-03-21.20:17:22.920</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.20:17:22.920</ModifiedTimestamp>
@@ -589,23 +594,23 @@ int</ExtendedProperties>
       <UnderlyingIndexName>PK_Actors</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="104" parent="79" name="id">
+    <column id="105" parent="79" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="105" parent="79" name="name_type">
+    <column id="106" parent="79" name="name_type">
       <Position>2</Position>
       <DataType>nvarchar(50 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="106" parent="79" name="PK_Geners">
+    <index id="107" parent="79" name="PK_Geners">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="107" parent="79" name="PK_Geners">
+    <key id="108" parent="79" name="PK_Geners">
       <ObjectId>1077578877</ObjectId>
       <CreatedTimestamp>2021-03-21.20:20:02.537</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.20:20:02.537</ModifiedTimestamp>
@@ -613,52 +618,52 @@ int</ExtendedProperties>
       <UnderlyingIndexName>PK_Geners</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="108" parent="80" name="id">
+    <column id="109" parent="80" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="109" parent="80" name="description">
+    <column id="110" parent="80" name="description">
       <Position>2</Position>
       <DataType>nvarchar(max)|0s</DataType>
     </column>
-    <column id="110" parent="80" name="date">
+    <column id="111" parent="80" name="date">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="111" parent="80" name="duration">
+    <column id="112" parent="80" name="duration">
       <Position>5</Position>
       <DataType>nvarchar(50 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="112" parent="80" name="amount_tickets">
+    <column id="113" parent="80" name="amount_tickets">
       <Position>6</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="113" parent="80" name="price">
+    <column id="114" parent="80" name="price">
       <Position>9</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="114" parent="80" name="rating">
+    <column id="115" parent="80" name="rating">
       <Position>10</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="115" parent="80" name="genre_id">
+    <column id="116" parent="80" name="genre_id">
       <Position>11</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="116" parent="80" name="PK_Performance">
+    <index id="117" parent="80" name="PK_Performance">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="117" parent="80" name="PK_Performance">
+    <key id="118" parent="80" name="PK_Performance">
       <ObjectId>1445580188</ObjectId>
       <CreatedTimestamp>2021-03-21.21:17:47.407</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:17:47.407</ModifiedTimestamp>
@@ -666,7 +671,7 @@ int</ExtendedProperties>
       <UnderlyingIndexName>PK_Performance</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="118" parent="80" name="FK_Performances_Geners">
+    <foreign-key id="119" parent="80" name="FK_Performances_Geners">
       <ObjectId>1493580359</ObjectId>
       <CreatedTimestamp>2021-03-21.21:26:13.490</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:26:13.490</ModifiedTimestamp>
@@ -676,7 +681,7 @@ int</ExtendedProperties>
       <RefKeyName>PK_Geners</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="119" parent="80" name="FKsj08gx0x1ewva84423x4h7x97">
+    <foreign-key id="120" parent="80" name="FKsj08gx0x1ewva84423x4h7x97">
       <ObjectId>110623437</ObjectId>
       <CreatedTimestamp>2021-04-14.14:31:13.443</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-14.14:31:13.443</ModifiedTimestamp>
@@ -686,17 +691,17 @@ int</ExtendedProperties>
       <RefKeyName>PK_Geners</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="120" parent="81" name="id_scenarist">
+    <column id="121" parent="81" name="id_scenarist">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="121" parent="81" name="id_performance">
+    <column id="122" parent="81" name="id_performance">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <foreign-key id="122" parent="81" name="FK_ScenaristPerformance_Scenarists">
+    <foreign-key id="123" parent="81" name="FK_ScenaristPerformance_Scenarists">
       <ObjectId>1365579903</ObjectId>
       <CreatedTimestamp>2021-03-21.21:16:25.390</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:16:25.390</ModifiedTimestamp>
@@ -706,7 +711,7 @@ int</ExtendedProperties>
       <RefKeyName>PK_Scenarists</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="123" parent="81" name="FK_ScenaristPerformance_Performances">
+    <foreign-key id="124" parent="81" name="FK_ScenaristPerformance_Performances">
       <ObjectId>1461580245</ObjectId>
       <CreatedTimestamp>2021-03-21.21:17:47.530</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.21:17:47.530</ModifiedTimestamp>
@@ -716,27 +721,27 @@ int</ExtendedProperties>
       <RefKeyName>PK_Performance</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="124" parent="82" name="id">
+    <column id="125" parent="82" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="125" parent="82" name="name">
+    <column id="126" parent="82" name="name">
       <Position>2</Position>
       <DataType>nvarchar(25 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="126" parent="82" name="biography">
+    <column id="127" parent="82" name="biography">
       <Position>3</Position>
       <DataType>nvarchar(max)|0s</DataType>
     </column>
-    <index id="127" parent="82" name="PK_Scenarists">
+    <index id="128" parent="82" name="PK_Scenarists">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="128" parent="82" name="PK_Scenarists">
+    <key id="129" parent="82" name="PK_Scenarists">
       <ObjectId>1045578763</ObjectId>
       <CreatedTimestamp>2021-03-21.20:18:29.867</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.20:18:29.867</ModifiedTimestamp>
@@ -744,17 +749,17 @@ int</ExtendedProperties>
       <UnderlyingIndexName>PK_Scenarists</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="129" parent="83" name="id_actor">
+    <column id="130" parent="83" name="id_actor">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="130" parent="83" name="id_performance">
+    <column id="131" parent="83" name="id_performance">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="131" parent="83" name="PK__actor_pe__B1C7ECE3D04EADE7">
+    <index id="132" parent="83" name="PK__actor_pe__B1C7ECE3D04EADE7">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_actor
@@ -762,7 +767,7 @@ id_performance</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="132" parent="83" name="PK__actor_pe__B1C7ECE3D04EADE7">
+    <key id="133" parent="83" name="PK__actor_pe__B1C7ECE3D04EADE7">
       <ObjectId>1698105090</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-04-14.12:08:12.120</CreatedTimestamp>
@@ -772,7 +777,7 @@ id_performance</ColNames>
       <UnderlyingIndexName>PK__actor_pe__B1C7ECE3D04EADE7</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="133" parent="83" name="FKi9sg8trsm5cu8pyfrxj7qs9v0">
+    <foreign-key id="134" parent="83" name="FKi9sg8trsm5cu8pyfrxj7qs9v0">
       <ObjectId>1794105432</ObjectId>
       <CreatedTimestamp>2021-04-14.12:08:12.130</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-14.12:08:12.130</ModifiedTimestamp>
@@ -782,7 +787,7 @@ id_performance</ColNames>
       <RefKeyName>PK_Actors</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="134" parent="83" name="FKe9cfovn4x0bhdmu53dg7wnaqn">
+    <foreign-key id="135" parent="83" name="FKe9cfovn4x0bhdmu53dg7wnaqn">
       <ObjectId>1778105375</ObjectId>
       <CreatedTimestamp>2021-04-14.12:08:12.127</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-14.12:08:12.127</ModifiedTimestamp>
@@ -792,32 +797,40 @@ id_performance</ColNames>
       <RefKeyName>PK_Performance</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="135" parent="84" name="id">
+    <column id="136" parent="84" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="136" parent="84" name="amount">
+    <column id="137" parent="84" name="amount">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="137" parent="84" name="id_performance">
+    <column id="138" parent="84" name="id_performance">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="138" parent="84" name="id_user">
+    <column id="139" parent="84" name="id_user">
       <Position>4</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="139" parent="84" name="PK__booking">
+    <column id="140" parent="84" name="performances_by_id_performance">
+      <Position>5</Position>
+      <DataType>varbinary(255 char)|0s</DataType>
+    </column>
+    <column id="141" parent="84" name="users_by_id_user">
+      <Position>6</Position>
+      <DataType>varbinary(255 char)|0s</DataType>
+    </column>
+    <index id="142" parent="84" name="PK__booking">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="140" parent="84" name="PK__booking">
+    <key id="143" parent="84" name="PK__booking">
       <ObjectId>386100416</ObjectId>
       <CreatedTimestamp>2021-04-10.15:09:06.297</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-10.16:44:33.347</ModifiedTimestamp>
@@ -825,7 +838,7 @@ id_performance</ColNames>
       <UnderlyingIndexName>PK__booking</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="141" parent="84" name="FK6abnu15l371xl5e5yhmbpn1a2">
+    <foreign-key id="144" parent="84" name="FK6abnu15l371xl5e5yhmbpn1a2">
       <ObjectId>962102468</ObjectId>
       <CreatedTimestamp>2021-04-10.16:47:18.910</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-10.16:47:18.910</ModifiedTimestamp>
@@ -835,7 +848,7 @@ id_performance</ColNames>
       <RefKeyName>PK_Performance</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="142" parent="84" name="FKnvu2tiv1eql9913qwqigqcoal">
+    <foreign-key id="145" parent="84" name="FKnvu2tiv1eql9913qwqigqcoal">
       <ObjectId>978102525</ObjectId>
       <CreatedTimestamp>2021-04-10.16:47:18.920</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-10.16:47:18.920</ModifiedTimestamp>
@@ -845,44 +858,92 @@ id_performance</ColNames>
       <RefKeyName>PK__users</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="143" parent="85" name="name">
+    <column id="146" parent="85" name="id_scenarist">
       <Position>1</Position>
-      <DataType>sysname|0s</DataType>
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="144" parent="85" name="principal_id">
+    <column id="147" parent="85" name="id_performance">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="145" parent="85" name="diagram_id">
+    <index id="148" parent="85" name="PK__scenaris__F4981CC46F100D93">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_scenarist
+id_performance</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="149" parent="85" name="PK__scenaris__F4981CC46F100D93">
+      <ObjectId>1262627541</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2021-04-22.03:57:15.890</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:15.890</ModifiedTimestamp>
+      <ColNames>id_scenarist
+id_performance</ColNames>
+      <UnderlyingIndexName>PK__scenaris__F4981CC46F100D93</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="150" parent="85" name="FKf83tsxl1a6gr3c09jqx296c4k">
+      <ObjectId>1310627712</ObjectId>
+      <CreatedTimestamp>2021-04-22.03:57:16.013</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:16.013</ModifiedTimestamp>
+      <ColNames>id_scenarist</ColNames>
+      <RefTableId>1029578706</RefTableId>
+      <RefTableName>Scenarists</RefTableName>
+      <RefKeyName>PK_Scenarists</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="151" parent="85" name="FKfagitdyo2sqjxrinjfvyyv8mp">
+      <ObjectId>1294627655</ObjectId>
+      <CreatedTimestamp>2021-04-22.03:57:16.010</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-22.03:57:16.010</ModifiedTimestamp>
+      <ColNames>id_performance</ColNames>
+      <RefTableId>1429580131</RefTableId>
+      <RefTableName>Performances</RefTableName>
+      <RefKeyName>PK_Performance</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="152" parent="86" name="name">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="153" parent="86" name="principal_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="154" parent="86" name="diagram_id">
       <Position>3</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="146" parent="85" name="version">
+    <column id="155" parent="86" name="version">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="147" parent="85" name="definition">
+    <column id="156" parent="86" name="definition">
       <Position>5</Position>
       <DataType>varbinary(max)|0s</DataType>
     </column>
-    <index id="148" parent="85" name="PK__sysdiagr__C2B05B61DC93E799">
+    <index id="157" parent="86" name="PK__sysdiagr__C2B05B61DC93E799">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>diagram_id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <index id="149" parent="85" name="UK_principal_name">
+    <index id="158" parent="86" name="UK_principal_name">
       <Position>2</Position>
       <ColNames>principal_id
 name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="150" parent="85" name="PK__sysdiagr__C2B05B61DC93E799">
+    <key id="159" parent="86" name="PK__sysdiagr__C2B05B61DC93E799">
       <ObjectId>1189579276</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-03-21.20:57:12.820</CreatedTimestamp>
@@ -891,7 +952,7 @@ name</ColNames>
       <UnderlyingIndexName>PK__sysdiagr__C2B05B61DC93E799</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="151" parent="85" name="UK_principal_name">
+    <key id="160" parent="86" name="UK_principal_name">
       <ObjectId>1205579333</ObjectId>
       <CreatedTimestamp>2021-03-21.20:57:12.820</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-21.20:57:12.820</ModifiedTimestamp>
@@ -899,30 +960,30 @@ name</ColNames>
 name</ColNames>
       <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
     </key>
-    <column id="152" parent="86" name="id">
+    <column id="161" parent="87" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="153" parent="86" name="email">
+    <column id="162" parent="87" name="email">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="154" parent="86" name="login">
+    <column id="163" parent="87" name="login">
       <Position>3</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="155" parent="86" name="password">
+    <column id="164" parent="87" name="password">
       <Position>4</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="156" parent="86" name="PK__users">
+    <index id="165" parent="87" name="PK__users">
       <Position>1</Position>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="157" parent="86" name="PK__users">
+    <key id="166" parent="87" name="PK__users">
       <ObjectId>466100701</ObjectId>
       <CreatedTimestamp>2021-04-10.15:09:06.300</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-10.16:46:02.793</ModifiedTimestamp>
@@ -930,75 +991,75 @@ name</ColNames>
       <UnderlyingIndexName>PK__users</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="158" parent="87">
+    <argument id="167" parent="88">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="159" parent="88" name="@diagramname">
+    <argument id="168" parent="89" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="160" parent="88" name="@owner_id">
+    <argument id="169" parent="89" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="161" parent="88" name="@version">
+    <argument id="170" parent="89" name="@version">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="162" parent="88" name="@definition">
+    <argument id="171" parent="89" name="@definition">
       <Position>4</Position>
       <DataType>varbinary(max)|0s</DataType>
     </argument>
-    <argument id="163" parent="89" name="@diagramname">
+    <argument id="172" parent="90" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="164" parent="89" name="@owner_id">
+    <argument id="173" parent="90" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="165" parent="89" name="@version">
+    <argument id="174" parent="90" name="@version">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="166" parent="89" name="@definition">
+    <argument id="175" parent="90" name="@definition">
       <Position>4</Position>
       <DataType>varbinary(max)|0s</DataType>
     </argument>
-    <argument id="167" parent="90" name="@diagramname">
+    <argument id="176" parent="91" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="168" parent="90" name="@owner_id">
+    <argument id="177" parent="91" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="169" parent="91" name="@diagramname">
+    <argument id="178" parent="92" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="170" parent="91" name="@owner_id">
+    <argument id="179" parent="92" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="171" parent="92" name="@diagramname">
+    <argument id="180" parent="93" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="172" parent="92" name="@owner_id">
+    <argument id="181" parent="93" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="173" parent="93" name="@diagramname">
+    <argument id="182" parent="94" name="@diagramname">
       <Position>1</Position>
       <DataType>sysname|0s</DataType>
     </argument>
-    <argument id="174" parent="93" name="@owner_id">
+    <argument id="183" parent="94" name="@owner_id">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="175" parent="93" name="@new_diagramname">
+    <argument id="184" parent="94" name="@new_diagramname">
       <Position>3</Position>
       <DataType>sysname|0s</DataType>
     </argument>

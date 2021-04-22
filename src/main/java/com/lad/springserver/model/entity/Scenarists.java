@@ -1,10 +1,13 @@
 package com.lad.springserver.model.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
+@Data
 @Entity
 public class Scenarists extends CommonEntity {
    // private int id;
