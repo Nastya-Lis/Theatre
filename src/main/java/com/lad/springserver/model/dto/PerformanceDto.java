@@ -8,6 +8,7 @@ import lombok.Data;
 
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class PerformanceDto extends AbstractDto{
     private int amountTickets;
     private double price;
     private double rating;
-    private Collection<BookingDto> bookings;
+    private Collection<Integer> bookings;
     private GenreDto genre;
     public Collection<ActorDto> actors;
     public Collection<ScenaristDto> scenarists;
