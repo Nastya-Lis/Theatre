@@ -1,17 +1,28 @@
 package com.lad.springserver.model.entity;
 
+import com.lad.springserver.model.service.UserService;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
 
+
 @Entity
-public class Users extends CommonEntity {
+public class Users extends CommonEntity implements UserDetails {
     //private int id;
     private String login;
     private String password;
     private String email;
     @OneToMany(mappedBy = "usersByIdUser")
     private Collection<Booking> bookingsById;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id",referencedColumnName = "id",nullable = false)
+    private Roles role;
 
 //    @Id
 //    @Column(name = "id")
@@ -43,6 +54,40 @@ public class Users extends CommonEntity {
         this.password = password;
     }
 
+    // переопределение UserDetails
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return (Collection<? extends GrantedAuthority>) getRole();
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+//
+
+
     @Basic
     @Column(name = "email")
     public String getEmail() {
@@ -66,6 +111,14 @@ public class Users extends CommonEntity {
         return Objects.hash(/*id,*/ login, password, email);
     }
 
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
+    }
 
     public Collection<Booking> getBookingsById() {
         return bookingsById;

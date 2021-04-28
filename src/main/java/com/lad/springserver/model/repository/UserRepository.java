@@ -1,9 +1,15 @@
 package com.lad.springserver.model.repository;
 
 import com.lad.springserver.model.entity.Users;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UserRepository extends IRepository<Users> {
+import java.util.Optional;
 
+@Repository
+public interface UserRepository extends IRepository<Users>{
+    Users findFirstByLoginAndEmail(String login, String email);
+    Users findFirstByEmail(String email);
+
+    Users findFirstByLoginAndPassword(String login, String password);
 }
