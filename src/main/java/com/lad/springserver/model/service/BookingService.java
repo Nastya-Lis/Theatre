@@ -5,10 +5,16 @@ import com.lad.springserver.model.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookingService extends CommonServiceOperation<Booking, BookingRepository> {
     @Autowired
     public BookingService(BookingRepository repository) {
         super(repository);
+    }
+
+    public List<Booking> getBookingsByUserId(Integer id){
+        return repository.findBookingsByUserId(id);
     }
 }

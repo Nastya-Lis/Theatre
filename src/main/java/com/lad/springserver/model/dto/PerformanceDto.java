@@ -16,6 +16,7 @@ import java.util.Set;
 
 @Data
 public class PerformanceDto extends AbstractDto{
+    private String name;
     private String description;
     private Timestamp date;
     private String duration;

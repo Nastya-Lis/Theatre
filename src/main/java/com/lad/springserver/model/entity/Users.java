@@ -1,6 +1,7 @@
 package com.lad.springserver.model.entity;
 
 import com.lad.springserver.model.service.UserService;
+import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +12,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Users extends CommonEntity implements UserDetails {
     //private int id;

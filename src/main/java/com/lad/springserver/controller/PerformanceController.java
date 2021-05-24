@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/performances")
+@RequestMapping("performances")
 public class PerformanceController extends CommonController<Performances,PerformanceRepository, PerformanceDto, PerformanceService, PerformanceMapping>{
 
     @Autowired
@@ -29,7 +29,7 @@ public class PerformanceController extends CommonController<Performances,Perform
         this.performanceRepository = repository;
     }
 */
-   /* @GetMapping("/all")
+    /*@GetMapping("/all")
     public List<Performances> getAllPerformances(){
        return performanceRepository.findAll();
     }*/

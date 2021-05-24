@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/actors")
+@RequestMapping("actors")
 public class ActorController extends CommonController<Actors, ActorRepository, ActorDto, ActorService, ActorMapping> {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")

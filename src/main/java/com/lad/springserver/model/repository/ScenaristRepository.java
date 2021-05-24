@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface ScenaristRepository extends IRepository<Scenarists>{
     @Override
     List<Scenarists> findAll(Sort sort);
+
 }

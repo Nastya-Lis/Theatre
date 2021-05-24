@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/scenarists")
+@RequestMapping("scenarists")
 public class ScenaristController extends CommonController<Scenarists, ScenaristRepository, ScenaristDto, ScenaristService, ScenaristMapping>{
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")

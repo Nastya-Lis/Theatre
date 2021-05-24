@@ -29,10 +29,10 @@ public class Roles extends CommonEntity implements GrantedAuthority {
 
     }
 
-    public Roles(int id, String name){
+   /* public Roles(int id, String name){
         super(id);
         this.name = name;
-    }
+    }*/
 
     @Basic
     @Column(name = "name")

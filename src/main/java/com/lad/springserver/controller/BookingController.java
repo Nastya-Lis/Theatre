@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/bookings")
+@RequestMapping("bookings")
 public class BookingController extends CommonController<Booking, BookingRepository, BookingDto, BookingService, BookingMapping>{
 
     @Autowired

@@ -6,9 +6,12 @@ import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
+
 @Entity
 public class Performances extends CommonEntity {
    // private int id;
+
+    private String name;
     private String description;
     private Timestamp date;
     private String duration;
@@ -39,6 +42,16 @@ public class Performances extends CommonEntity {
 //    public void setId(int id) {
 //        this.id = id;
 //    }
+
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Basic
     @Column(name = "description")
@@ -73,12 +86,12 @@ public class Performances extends CommonEntity {
 
     @Basic
     @Column(name = "amount_tickets")
-    public int getAmmountTickets() {
+    public int getAmountTickets() {
         return amountTickets;
     }
 
-    public void setAmmountTickets(int ammountTickets) {
-        this.amountTickets = ammountTickets;
+    public void setAmountTickets(int amountTickets) {
+        this.amountTickets = amountTickets;
     }
 
 

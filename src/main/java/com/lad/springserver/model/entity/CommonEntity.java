@@ -14,11 +14,11 @@ public abstract class CommonEntity implements Serializable {
     @Column(name = "id", nullable = false)
     private int id;
 
-    public CommonEntity(){
+   /* public CommonEntity(){
 
     }
 
     public CommonEntity(int id){
         this.id = id;
-    }
+    }*/
 }

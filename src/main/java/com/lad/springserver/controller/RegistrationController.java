@@ -22,9 +22,8 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
-
     @PostMapping
-    public void addUser(@RequestBody @Valid UserDto userDto, HttpServletResponse response) throws ShowsServiceException {
+    public void addUser(@RequestBody UserDto userDto, HttpServletResponse response) throws ShowsServiceException {
         userService.saveUser(userDto);
         response.setStatus(HttpStatus.CREATED.value());
     }

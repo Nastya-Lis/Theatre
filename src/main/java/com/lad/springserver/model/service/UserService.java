@@ -58,6 +58,15 @@ public class UserService implements UserDetailsService {
         return userFromDb.orElse(new Users());
     }
 
+    public Users findUserByAllParam(String login, String password, String email){
+        return userRepository.findUsersByLoginAndPasswordAndEmail(login,password,email);
+    }
+
+    public Users findUserByEmailAndPassword(String password, String email){
+        return userRepository.findUsersByEmailAndPassword(password,email);
+    }
+
+
     public List<Users> allUsers() {
         return userRepository.findAll();
     }
@@ -75,9 +84,13 @@ public class UserService implements UserDetailsService {
             throw new ShowsServiceException("User already exists");
         }
 
-        user.setRole(/*Collections.singleton(*/roleRepository.findFirstByName("ROLE_USER"));
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+        Users newUsersForCreatingId = new Users();
+        newUsersForCreatingId.setLogin(user.getLogin());
+        newUsersForCreatingId.setEmail(user.getEmail());
+
+        newUsersForCreatingId.setRole(/*Collections.singleton(*/roleRepository.findFirstByName("ROLE_USER"));
+        newUsersForCreatingId.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userRepository.save(newUsersForCreatingId);
 
        /* Users userFromDB = userRepository.findFirstByEmail(user.getUsername());
 

@@ -3,6 +3,7 @@ package com.lad.springserver.controller;
 
 import com.lad.springserver.controller.mapping.UserMapping;
 import com.lad.springserver.model.dto.UserDto;
+import com.lad.springserver.model.entity.Users;
 import com.lad.springserver.model.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/l")
 public class LoginController {
     @Autowired
     UserService userService;
@@ -18,10 +19,12 @@ public class LoginController {
     @Autowired
     UserMapping userMapping;
 
-
     @GetMapping
-    public void logIn(@RequestParam String username, @RequestParam String password){
-        userService.findUserByLoginAndPassword(username,password);
+    public UserDto logIn(@RequestParam String email, @RequestParam String password){
+       // userService.findUserByLoginAndPassword(username,password);
+       Users user =  userService.findUserByEmailAndPassword(email,password);
+       return userMapping.entityToDto(user);
+       // userService.findUserByAllParam(username,password,email);
     }
   //  public ResponseEntity<LoginResponse> login(@RequestBody lo)
 
