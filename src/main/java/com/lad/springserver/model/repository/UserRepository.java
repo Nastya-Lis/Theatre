@@ -16,4 +16,6 @@ public interface UserRepository extends IRepository<Users>{
     Users findUsersByLoginAndPasswordAndEmail(String login, String password, String Email);
 
     Users findUsersByEmailAndPassword(String Email, String password);
+
+    Users findUsersById(Integer id);
 }

@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface PerformanceRepository extends IRepository<Performances>{
     Optional<Performances> findPerformancesByGenersByGenre(Geners gener);
+
+    Performances findPerformancesById(Integer id);
 }

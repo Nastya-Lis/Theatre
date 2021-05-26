@@ -116,17 +116,19 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/registration").not().fullyAuthenticated()
-                .antMatchers("/user/**").hasRole("USER")
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                /*.antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN")*/
                 .antMatchers(HttpMethod.GET, "/performances/all").permitAll()
                 .antMatchers(HttpMethod.GET, "/scenarists/all").permitAll()
                 .antMatchers(HttpMethod.GET, "/actors/all").permitAll()
                 .antMatchers(HttpMethod.GET, "/genres/all").permitAll()
+                .antMatchers("/bookings/add").permitAll()
+                .antMatchers("/performances/rating").permitAll()
                 .antMatchers(HttpMethod.GET, "/performances/**").hasRole("USER")
-                .antMatchers(HttpMethod.GET, "/user/**").hasAnyRole("USER","ADMIN")
+                .antMatchers(HttpMethod.GET, "/user/**")/*.hasAnyRole("USER","ADMIN")*/.permitAll()
                 .antMatchers("/", "/login", "/resources/**", "/js/**", "/ws/**").permitAll()
                 .anyRequest().hasRole("ADMIN")
-/*                .and()
+                .and()
                 .formLogin()
                 .loginPage("/login")
                 .successHandler((request, response, exception) -> {
@@ -139,7 +141,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                     String json = om.writeValueAsString(authorizedUser);
                     pw.print(json);
                 })
-                .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))*/
+                .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))
                 .and()
                 .logout()
                 .invalidateHttpSession(true)

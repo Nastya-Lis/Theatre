@@ -16,4 +16,7 @@ public class PerformanceService extends CommonServiceOperation<Performances, Per
         super(repository);
     }
 
+    public Performances getPerformanceById(Integer id){
+        return repository.findPerformancesById(id);
+    }
 }

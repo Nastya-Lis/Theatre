@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "string")
 public interface RoleMapping extends CommonMapping<Roles, RoleDto>{
+
     Roles dtoToEntity(RoleDto dto);
     RoleDto entityToDto(Roles role);
 }

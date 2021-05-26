@@ -15,6 +15,5 @@ public interface BookingRepository extends IRepository<Booking>{
     @Query(value = "SELECT * FROM booking WHERE id_user =:idUser", nativeQuery = true)
     List<Booking> findBookingsByUserId(Integer idUser);
 
-
    // List<Booking> findBookingsByUsersByIdUser(Integer idUser);
 }

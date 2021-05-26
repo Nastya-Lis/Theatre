@@ -62,8 +62,8 @@ public class UserService implements UserDetailsService {
         return userRepository.findUsersByLoginAndPasswordAndEmail(login,password,email);
     }
 
-    public Users findUserByEmailAndPassword(String password, String email){
-        return userRepository.findUsersByEmailAndPassword(password,email);
+    public Users findUserByEmailAndPassword( String email,String password){
+        return userRepository.findUsersByEmailAndPassword(email,password);
     }
 
 
@@ -77,6 +77,7 @@ public class UserService implements UserDetailsService {
 //            throw new DeliveryServiceException("Passwords not equals");
 //        }
 
+        userDto.setRoleId(2);
         Users user = userMapping.dtoToEntity(userDto);
         Users userFromDB = userRepository.findFirstByEmail(user.getUsername());
 
