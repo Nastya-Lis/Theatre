@@ -9,32 +9,23 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Objects;
 
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
 public class Users extends CommonEntity implements UserDetails {
-    //private int id;
     private String login;
     private String password;
     private String email;
-    @OneToMany(mappedBy = "usersByIdUser")
+    @OneToMany(mappedBy = "usersByIdUser",fetch = FetchType.EAGER)
     private Collection<Booking> bookingsById;
 
     @ManyToOne
     @JoinColumn(name = "role_id",referencedColumnName = "id",nullable = false)
     private Roles role;
 
-//    @Id
-//    @Column(name = "id")
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
 
     @Basic
     @Column(name = "login")
@@ -59,7 +50,7 @@ public class Users extends CommonEntity implements UserDetails {
     // переопределение UserDetails
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return (Collection<? extends GrantedAuthority>) getRole();
+        return Collections.singleton(getRole());
     }
 
     @Override
@@ -87,9 +78,6 @@ public class Users extends CommonEntity implements UserDetails {
         return true;
     }
 
-//
-
-
     @Basic
     @Column(name = "email")
     public String getEmail() {
@@ -105,12 +93,12 @@ public class Users extends CommonEntity implements UserDetails {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Users users = (Users) o;
-        return /*id == users.id &&*/ Objects.equals(login, users.login) && Objects.equals(password, users.password) && Objects.equals(email, users.email);
+        return Objects.equals(login, users.login) && Objects.equals(password, users.password) && Objects.equals(email, users.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(/*id,*/ login, password, email);
+        return Objects.hash( login, password, email);
     }
 
 

@@ -52,10 +52,4 @@ public interface PerformanceMapping extends CommonMapping<Performances, Performa
         return bookingCollection.stream().map(CommonEntity::getId).collect(Collectors.toList());
     }
 
-
-   /* @Named("idToEActor")
-    default Collection<Actors> idToEActor(Collection<Integer> idCollection){
-
-    }*/
-
 }

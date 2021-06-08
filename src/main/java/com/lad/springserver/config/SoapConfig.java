@@ -12,10 +12,11 @@ import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+/*
 @EnableWs
 @Configuration
 public class SoapConfig extends WsConfigurerAdapter {
- /*   @Bean
+    @Bean
     public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
@@ -26,7 +27,7 @@ public class SoapConfig extends WsConfigurerAdapter {
     @Bean(name = "countries")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("OrdersPort");
+        wsdl11Definition.setPortTypeName("bookingsPort");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("https://github.com/Nastia-Lis/Shows_App");
         wsdl11Definition.setSchema(countriesSchema);
@@ -36,5 +37,5 @@ public class SoapConfig extends WsConfigurerAdapter {
     @Bean
     public XsdSchema countriesSchema() {
         return new SimpleXsdSchema(new ClassPathResource("orders.xsd"));
-    }*/
-}
+    }
+}*/

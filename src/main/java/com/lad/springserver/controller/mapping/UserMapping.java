@@ -29,18 +29,6 @@ public interface UserMapping extends CommonMapping<Users, UserDto>{
 
     UserDto entityToDto(Users user);
 
-/*
-    @Named("nameToEntity")
-    default Roles nameToEntity(String name){
-        RoleService roleService = new RoleService();
-        return roleService.searchName(name);
-    }
-
-    @Named("entityToName")
-    default String entityToName(Roles role){
-        return role.getName();
-    }*/
-
     @Named("idToEntity")
     default Roles idToEntity(Integer id){
         Roles role = new Roles();

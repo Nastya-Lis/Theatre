@@ -26,34 +26,23 @@ public class LoginController {
 
     @GetMapping
     public UserDto logIn(@RequestParam String username, @RequestParam String password){
-       // userService.findUserByLoginAndPassword(username,password);
         Users us = (Users) userService.loadUserByUsername(username);
         Boolean bulka = bCryptPasswordEncoder.matches(password,us.getPassword());
         Users user =  userService.findUserByEmailAndPassword(username,us.getPassword());
         Roles userRole = user.getRole();
         Integer idRole = userRole.getId();
-       // user.setRole();
-        return userMapping.entityToDto(user);
-       // userService.findUserByAllParam(username,password,email);
-    }
-  //  public ResponseEntity<LoginResponse> login(@RequestBody lo)
 
-//    @GetMapping("/greeting")
-//    public String hello()
-//    {
-//        return "Start page";
-//    }
-//
-//    @GetMapping("/admin")
-//    public String admin()
-//    {
-//        return "For Admin";
-//    }
-//
-//    @GetMapping("/userr")
-//    public String user()
-//    {
-//        return "For User";
-//    }
+        return userMapping.entityToDto(user);
+    }
+
+    @PostMapping
+    public UserDto someMethod(@RequestParam String username, @RequestParam String password) {
+        Users us = (Users) userService.loadUserByUsername(username);
+        Boolean bulka = bCryptPasswordEncoder.matches(password,us.getPassword());
+        Users user =  userService.findUserByEmailAndPassword(username,us.getPassword());
+        Roles userRole = user.getRole();
+        Integer idRole = userRole.getId();
+        return userMapping.entityToDto(user);
+    }
 
 }

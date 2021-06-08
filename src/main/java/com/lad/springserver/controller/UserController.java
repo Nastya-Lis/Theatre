@@ -39,20 +39,6 @@ public class UserController {
     @Autowired
     BookingMapping bookingMapping;
 
-//ломающееся дерьмище памагити
-  /*  @GetMapping(value = "/id")
-    UserDto getUserById(@RequestParam Integer id){
-
-
-        UserDto userDto = userMapping.entityToDto(userRepository.findById(id).get());
-        return userDto;
-    }*/
-
-
-    /* UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-          UserDto userDto = userMapping.entityToDto(userService.findUserById(id));
-          return userDto;*/
-
     @GetMapping("/booking/{userId}")
     public List<BookingDto> bookingUser(@PathVariable("userId") Integer userId) {
       return bookingMapping.entitiesToDtos(bookingService.getBookingsByUserId(Integer.valueOf(userId)));
@@ -63,9 +49,7 @@ public class UserController {
         return userMapping.entityToDto(userService.findUserById(id));
     }
 
-
     @GetMapping
- //   @Secured("USER")
     UserDto getCurrentUser(){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         UserDto userDto = userMapping.entityToDto((Users) userService.loadUserByUsername(userDetails.getUsername()));

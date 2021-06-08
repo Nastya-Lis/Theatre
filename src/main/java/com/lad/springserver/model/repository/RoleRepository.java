@@ -12,8 +12,5 @@ import java.util.Optional;
 
 @Repository
 public interface RoleRepository extends IRepository<Roles>{
-   /* @Query("SELECT * FROM Roles WHERE ")
-    Optional<Roles> findRolesByName(String name);*/
-
     Roles findFirstByName(String name);
 }

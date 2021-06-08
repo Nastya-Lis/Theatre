@@ -16,25 +16,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/genres")
 public class GenreController extends CommonController<Geners,GenresRepository, GenreDto, GenersService, GenreMapping>{
-
-   // @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-
    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     public GenreController(GenreMapping mapper, GenersService service) {
         super(mapper, service);
     }
-   /* private final GenresRepository genresRepository;
 
-    @Autowired
-    public GenreController(GenresRepository repository){
-        this.genresRepository = repository;
-    }*/
-
-
-//    @GetMapping("/all")
-//    public List<Geners> getAllGenres(){
-//      return genresRepository.findAll();
-//    }
 
 }

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 public class Booking extends CommonEntity {
-    //private int id;
+
     private int amount;
 
     @ManyToOne
@@ -15,15 +15,6 @@ public class Booking extends CommonEntity {
     @JoinColumn(name = "id_performance", referencedColumnName = "id", nullable = false)
     private Performances performancesByIdPerformance;
 
-   /* @Id
-    @Column(name = "id")
-    public int getIdBooking() {
-        return id;
-    }
-
-    public void setIdBooking(int idBooking) {
-        this.id = idBooking;
-    }*/
 
     @Basic
     @Column(name = "amount")
@@ -40,12 +31,12 @@ public class Booking extends CommonEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Booking booking = (Booking) o;
-        return /*id == booking.id &&*/ amount == booking.amount;
+        return  amount == booking.amount;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(/*id, */amount);
+        return Objects.hash(amount);
     }
 
 

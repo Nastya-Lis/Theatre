@@ -14,12 +14,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -116,18 +116,34 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/registration").not().fullyAuthenticated()
+                .antMatchers("/**").permitAll()
                 /*.antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")*/
-                .antMatchers(HttpMethod.GET, "/performances/all").permitAll()
-                .antMatchers(HttpMethod.GET, "/scenarists/all").permitAll()
-                .antMatchers(HttpMethod.GET, "/actors/all").permitAll()
-                .antMatchers(HttpMethod.GET, "/genres/all").permitAll()
-                .antMatchers("/bookings/add").permitAll()
-                .antMatchers("/performances/rating").permitAll()
-                .antMatchers(HttpMethod.GET, "/performances/**").hasRole("USER")
-                .antMatchers(HttpMethod.GET, "/user/**")/*.hasAnyRole("USER","ADMIN")*/.permitAll()
-                .antMatchers("/", "/login", "/resources/**", "/js/**", "/ws/**").permitAll()
-                .anyRequest().hasRole("ADMIN")
+                //.antMatchers(HttpMethod.GET, "/performances/all").permitAll()
+                //.antMatchers(HttpMethod.GET, "/scenarists/all").permitAll()
+                //.antMatchers(HttpMethod.GET, "/actors/all").permitAll()
+                //.antMatchers(HttpMethod.GET, "/genres/all").permitAll()
+                //.antMatchers("/bookings/**").permitAll()
+               // .antMatchers("/bookings/add").permitAll()
+               // .antMatchers("/performances/rating").permitAll()
+               // .antMatchers(HttpMethod.GET, "/performances/**").hasRole("USER")
+               // .antMatchers(HttpMethod.GET, "/user/**")/*.hasAnyRole("USER","ADMIN")*/.permitAll()
+                //.antMatchers("/", "/login", "/resources/**", "/js/**", "/ws/**").permitAll()
+               // .anyRequest().hasRole("ADMIN")
+                //.and()
+              //  .formLogin()
+              /*  .loginPage("/login")
+                .successHandler((request, response, exception) -> {
+                    response.setStatus(HttpStatus.OK.value());
+                    response.setHeader("Content-Type", "application/json");
+                    UserDetails details = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                    UserDto authorizedUser = userMapping.entityToDto((Users) userService.loadUserByUsername(details.getUsername()));
+                    PrintWriter pw = response.getWriter();
+                    ObjectMapper om = new ObjectMapper();
+                    String json = om.writeValueAsString(authorizedUser);
+                    pw.print(json);
+                })
+                .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))*/
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -143,147 +159,12 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 })
                 .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))
                 .and()
-                .logout()
-                .invalidateHttpSession(true)
-                .permitAll()
-                .logoutSuccessUrl("/")
-                /*.and()
-                .rememberMe().key("DeliveryServiceSecretKey")*/;
-
-        //ПАРАША С ХАБРА
-      /*  httpSecurity
-                .csrf()
-                .disable()
-                .authorizeRequests()
-                //Доступ только для не зарегистрированных пользователей
-                .antMatchers("/registration").not().fullyAuthenticated()
-                //Доступ только для пользователей с ролью Администратор
-                .antMatchers("/admin/**").hasRole("ADMIN")
-              //  .antMatchers("/user/**").hasRole("USER")
-                //Доступ разрешен всем пользователей
-                .anyRequest().permitAll().
-                //Все остальные страницы требуют аутентификации
-               // .anyRequest().authenticated()
-                and()
-                //Настройка для входа в систему
-                .formLogin()
-                .loginPage("/login")
-                //Перенарпавление на главную страницу после успешного входа
-                .defaultSuccessUrl("/")
-                .permitAll()
-                .and()
-                .logout()
-                .permitAll()
-                .logoutSuccessUrl("/");*/
-
-        //ЛОМАЙ МЕНЯ
-    /*    httpSecurity
-                .csrf()
-                .disable()
-                .cors()
-                .disable()
-                .authorizeRequests()
-                //Доступ только для не зарегистрированных пользователей
-                .antMatchers("/registration").not().fullyAuthenticated()
-                .antMatchers("/user/profile").hasRole("USER")
-                //    antMatchers("/performances/all").hasAnyRole("USER","ADMIN")
-                //Доступ только для пользователей с ролью Администратор
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                //Доступ разрешен всем пользователей
-                .antMatchers("/", "/login").permitAll()
-                //Все остальные страницы требуют аутентификации
-                .anyRequest().hasRole("ADMIN")
-                .and()
-                //Настройка для входа в систему
-                .formLogin().
-                loginPage("/login")
-                .successHandler((request, response, exception) -> {
-                    response.setStatus(HttpStatus.OK.value());
-                    response.setHeader("Content-Type", "application/json");
-                    UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-                    UserDto authorizedUser = userMapping.entityToDto((Users) userService.loadUserByUsername(details.getUsername()));
-                    PrintWriter pw = response.getWriter();
-                    ObjectMapper om = new ObjectMapper();
-                    String json = om.writeValueAsString(authorizedUser);
-                    pw.print(json);
-                })
-                .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))
+                .exceptionHandling().authenticationEntryPoint(new Http401UnauthorizedEntryPoint())
                 .and()
                 .logout()
                 .invalidateHttpSession(true)
                 .permitAll()
-                .logoutSuccessUrl("/")
-                .and()
-                .rememberMe().key("DeliveryServiceSecretKey");*/
-        //РАЗБЛОЧЬ МЕНЯ
-    /*    httpSecurity
-                .csrf()
-                .disable()
-                .cors()
-                .disable()
-                .authorizeRequests()
-                //Доступ только для не зарегистрированных пользователей
-                .antMatchers("/registration").not().fullyAuthenticated()
-                .antMatchers("/user/profile").hasRole("USER")
-            //    antMatchers("/performances/all").hasAnyRole("USER","ADMIN")
-                //Доступ только для пользователей с ролью Администратор
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                //Доступ разрешен всем пользователей
-                .antMatchers("/", "/login").permitAll()
-                //Все остальные страницы требуют аутентификации
-                .anyRequest().hasRole("ADMIN")
-                .and()
-                //Настройка для входа в систему
-                .formLogin().
-                loginPage("/login")
-                .successHandler((request, response, exception) -> {
-                    response.setStatus(HttpStatus.OK.value());
-                    response.setHeader("Content-Type", "application/json");
-                    UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-                    UserDto authorizedUser = userMapping.entityToDto((Users) userService.loadUserByUsername(details.getUsername()));
-                    PrintWriter pw = response.getWriter();
-                    ObjectMapper om = new ObjectMapper();
-                    String json = om.writeValueAsString(authorizedUser);
-                    pw.print(json);
-                })
-                .failureHandler((request, response, exception) -> response.setStatus(HttpStatus.UNAUTHORIZED.value()))
-                .and()
-                .logout()
-                .invalidateHttpSession(true)
-                .permitAll()
-                .logoutSuccessUrl("/")
-                .and()
-                .rememberMe().key("DeliveryServiceSecretKey");*/
-        //Test
-//        httpSecurity
-//                .csrf()
-//                .disable()
-//                .authorizeRequests()
-//                .antMatchers("/**").permitAll()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .failureHandler(new AuthenticationFailureHandler() {
-//
-//                    @Override
-//                    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-//                                                        AuthenticationException exception) throws IOException, ServletException {
-//                        String email = request.getParameter("email");
-//                        String error = exception.getMessage();
-//                        System.out.println("A failed login attempt with email: "
-//                                + email + ". Reason: " + error);
-//
-//                        String redirectUrl = request.getContextPath() + "/login?error=true";
-//                        response.sendRedirect(redirectUrl);
-//                    }
-//                })
-//                //Перенарпавление на главную страницу после успешного входа
-//                .defaultSuccessUrl("/")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .logoutSuccessUrl("/");
+                .logoutSuccessUrl("/");
 
     }
 
@@ -292,7 +173,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService).passwordEncoder(bCryptPasswordEncoder());
     }
 
-  /*  private static class Http401UnauthorizedEntryPoint implements AuthenticationEntryPoint {
+    private static class Http401UnauthorizedEntryPoint implements AuthenticationEntryPoint {
 
         public Http401UnauthorizedEntryPoint() {
         }
@@ -301,6 +182,4 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
             response.sendError(401, "You should login to get access");
         }
     }
-
-    */
 }

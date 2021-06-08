@@ -9,17 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 @Controller
-//@RequestMapping("/")
+@RequestMapping("/")
 public class MainController {
-
-    /*@Value("${spring.profiles.active}")
-    private String profile;
 
     @GetMapping
     public String main(Model model, @AuthenticationPrincipal Users user) {
-        model.addAttribute("isDevMode", "dev".equals(profile));
-
         return "index.html";
     }
-*/
+
 }

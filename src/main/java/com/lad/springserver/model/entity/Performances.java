@@ -9,8 +9,6 @@ import java.util.Set;
 
 @Entity
 public class Performances extends CommonEntity {
-   // private int id;
-
     private String name;
     private String description;
     private Timestamp date;
@@ -18,30 +16,19 @@ public class Performances extends CommonEntity {
     private int amountTickets;
     private double price;
     private double rating;
-  //  private Collection<ActorPerformance> actorPerformancesById;
+
     @OneToMany(mappedBy = "performancesByIdPerformance")
     private Collection<Booking> bookingsById;
 
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName = "id", nullable = false)
     private Geners genersByGenre;
-   // private Collection<ScenaristPerformance> scenaristPerformancesById;
 
-    @ManyToMany(mappedBy = "performances"/*,fetch = FetchType.EAGER*/)
+    @ManyToMany(mappedBy = "performances")
     public Collection<Actors> actorsSet;
 
-    @ManyToMany(mappedBy = "performances"/*, fetch = FetchType.EAGER*/)
+    @ManyToMany(mappedBy = "performances")
     public Collection<Scenarists> scenaristsSet;
-
-//    @Id
-//    @Column(name = "id")
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
 
     @Basic
     @Column(name = "name")
@@ -120,23 +107,13 @@ public class Performances extends CommonEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Performances that = (Performances) o;
-        return /*id == that.id &&*/ amountTickets == that.amountTickets && Double.compare(that.price, price) == 0 && Double.compare(that.rating, rating) == 0 && Objects.equals(description, that.description) && Objects.equals(date, that.date)  && Objects.equals(duration, that.duration);
+        return amountTickets == that.amountTickets && Double.compare(that.price, price) == 0 && Double.compare(that.rating, rating) == 0 && Objects.equals(description, that.description) && Objects.equals(date, that.date)  && Objects.equals(duration, that.duration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(/*id,*/ description, date, duration, amountTickets,price, rating);
+        return Objects.hash(description, date, duration, amountTickets,price, rating);
     }
-
-   /* @OneToMany(mappedBy = "performancesByIdPerformance")
-    public Collection<ActorPerformance> getActorPerformancesById() {
-        return actorPerformancesById;
-    }
-
-    public void setActorPerformancesById(Collection<ActorPerformance> actorPerformancesById) {
-        this.actorPerformancesById = actorPerformancesById;
-    }*/
-
 
     public Collection<Booking> getBookingsById() {
         return bookingsById;
@@ -155,13 +132,4 @@ public class Performances extends CommonEntity {
     public void setGenersByGenre(Geners genersByGenre) {
         this.genersByGenre = genersByGenre;
     }
-
-   /* @OneToMany(mappedBy = "performancesByIiPerformance")
-    public Collection<ScenaristPerformance> getScenaristPerformancesById() {
-        return scenaristPerformancesById;
-    }
-
-    public void setScenaristPerformancesById(Collection<ScenaristPerformance> scenaristPerformancesById) {
-        this.scenaristPerformancesById = scenaristPerformancesById;
-    }*/
 }

@@ -13,12 +13,4 @@ public abstract class CommonEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-
-   /* public CommonEntity(){
-
-    }
-
-    public CommonEntity(int id){
-        this.id = id;
-    }*/
 }

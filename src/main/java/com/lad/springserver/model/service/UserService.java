@@ -72,11 +72,6 @@ public class UserService implements UserDetailsService {
     }
 
     public void saveUser(UserDto userDto) throws ShowsServiceException {
-
-//        if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
-//            throw new DeliveryServiceException("Passwords not equals");
-//        }
-
         userDto.setRoleId(2);
         Users user = userMapping.dtoToEntity(userDto);
         Users userFromDB = userRepository.findFirstByEmail(user.getUsername());
@@ -89,20 +84,10 @@ public class UserService implements UserDetailsService {
         newUsersForCreatingId.setLogin(user.getLogin());
         newUsersForCreatingId.setEmail(user.getEmail());
 
-        newUsersForCreatingId.setRole(/*Collections.singleton(*/roleRepository.findFirstByName("ROLE_USER"));
+        newUsersForCreatingId.setRole(roleRepository.findFirstByName("ROLE_USER"));
         newUsersForCreatingId.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(newUsersForCreatingId);
 
-       /* Users userFromDB = userRepository.findFirstByEmail(user.getUsername());
-
-        if (userFromDB != null) {
-            return false;
-        }
-
-        user.setRole(*//*Collections.singleton(*//*new Roles(3, "ROLE_USER"));
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return true;*/
     }
 
 

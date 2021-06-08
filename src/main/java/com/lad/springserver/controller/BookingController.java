@@ -38,10 +38,6 @@ public class BookingController extends CommonController<Booking, BookingReposito
 
     @PostMapping("/add")
     public String getDataFromMobile(@RequestParam Integer amount,@RequestParam Integer userId,@RequestParam Integer performanceId){
-        /*BookingDto bookingDto1 = new BookingDto();
-        bookingDto1.setAmount(bookingDto.getAmount());
-        bookingDto1.setPerformance(bookingDto.getPerformance());
-        bookingDto1.setUser(bookingDto.getUser());*/
 
         Booking bookingToSave = new Booking();
         bookingToSave.setAmount(amount);
@@ -50,18 +46,12 @@ public class BookingController extends CommonController<Booking, BookingReposito
 
         Performances performance = performanceRepository.findPerformancesById(performanceId);
         performance.setAmountTickets(performance.getAmountTickets() - amount);
-     /*   Booking booking = bookingMapping.dtoToEntity(bookingDto);
-        Booking bookingWithNewId = new Booking();
-        bookingWithNewId.setAmount(booking.getAmount());
-        bookingWithNewId.setPerformancesByIdPerformance(booking.getPerformancesByIdPerformance());
-        bookingWithNewId.setUsersByIdUser(booking.getUsersByIdUser());*/
-
 
         bookingRepository.save(bookingToSave);
         performanceService.updateEntity(performance,performanceId);
 
-        //Response response = new Response();
-       // response.setStatus(response.is);
-        return "oh haee poco";
+        return "success";
     }
+
+
 }

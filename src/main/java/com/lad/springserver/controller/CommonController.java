@@ -27,12 +27,6 @@ public class CommonController<E extends CommonEntity,R extends IRepository<E>,D 
         this.service = service;
     }
 
-   /* @GetMapping("all")
-    public List<D> getAll(){
-        return mapper.entitiesToDtos(service.viewAll());
-    }*/
-
-
     @GetMapping("/all")
     public List<D> getAll() {
         return mapper.entitiesToDtos(service.viewAll());

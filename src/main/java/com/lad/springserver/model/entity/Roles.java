@@ -14,25 +14,9 @@ public class Roles extends CommonEntity implements GrantedAuthority {
 
     @OneToMany(mappedBy = "role")
     private Set<Users> users;
-
-  /*  @Id
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }*/
-
     public Roles(){
 
     }
-
-   /* public Roles(int id, String name){
-        super(id);
-        this.name = name;
-    }*/
 
     @Basic
     @Column(name = "name")
@@ -57,12 +41,12 @@ public class Roles extends CommonEntity implements GrantedAuthority {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Roles roles = (Roles) o;
-        return /*id == roles.id &&*/ Objects.equals(name, roles.name);
+        return  Objects.equals(name, roles.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(/*id,*/ name);
+        return Objects.hash( name);
     }
 
     @Override

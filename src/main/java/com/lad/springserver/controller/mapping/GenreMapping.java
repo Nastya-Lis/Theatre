@@ -19,12 +19,6 @@ public interface GenreMapping extends CommonMapping<Geners, GenreDto>{
     @Mapping(target = "performancesId", source = "performancesById", qualifiedByName = "entityToId")
     GenreDto entityToDto(Geners actor);
 
-   /* @Named("entityToId")
-    default Integer entityToId(Performances performance){
-        return performance.getId();
-    }
-
-   */
     @Named("entityToId")
     default Collection<Integer> entityToId(Collection<Performances> performances){
         return performances.stream().map(CommonEntity::getId).collect(Collectors.toList());
@@ -32,11 +26,6 @@ public interface GenreMapping extends CommonMapping<Geners, GenreDto>{
 
     @Named("idToEntity")
     default Collection<Performances> idToEntity(Collection<Integer> idCollection){
-        /*if(id == null)
-            return null;*/
-        //ArrayList<Integer> ids = (ArrayList<Integer>) idCollection;
-
-
         Collection<Performances> performancesCollection = new ArrayList<>();
 
         for (Integer id: idCollection) {
@@ -48,8 +37,6 @@ public interface GenreMapping extends CommonMapping<Geners, GenreDto>{
         }
 
         return performancesCollection;
-       /*        performances.setId(id);
-        return performances;*/
     }
 
 }
